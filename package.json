@@ -11,7 +11,7 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "webpack-dev-server --open --mode development",
+    "start": "webpack-dev-server --inline --hot --host 0.0.0.0 --public $siobahnv-spectra-hackathon-2020.glitch.me",
     "build": "webpack --mode production",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
