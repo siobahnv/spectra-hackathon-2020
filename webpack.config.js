@@ -3,7 +3,11 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require('path');
 
 module.exports = {
+  mode: 'production',
   entry: './src/index.js',
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   module: {
     rules: [
       {
@@ -43,7 +47,6 @@ module.exports = {
     })
   ],
   devServer: {
-    contentBase: [path.join(__dirname, 'build'), path.join(__dirname, 'public')],
     allowedHosts: [
       'glitch.com',
       'glitch.me',
