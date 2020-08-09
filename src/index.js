@@ -5,6 +5,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Form from "./js/components/Form";
 
+if (process.env.NODE_ENV !== 'production') {
+  console.log('Looks like we are in development mode!');
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
