@@ -3,6 +3,11 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
+const webpack = require('webpack');
+var dotenv = require('dotenv').config({path: __dirname + '/.env'});
+
+
+
 module.exports = {
   context: path.join(__dirname, './'),
   entry: './src/index.js',
@@ -51,6 +56,11 @@ module.exports = {
       template: "./src/index.html",
       filename: "./index.html"
     }),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(dotenv.parsed),
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      'process.env.DEBUG': JSON.stringify(process.env.DEBUG)
+    }),
   ],
   output: {
     filename: 'bundle.js',
@@ -64,4 +74,7 @@ module.exports = {
         }),
     ],
   },
+  node: {
+    fs: "empty"
+ },
 };
