@@ -5,7 +5,8 @@ class MyComponent extends React.Component {
 
     render() {
         return (
-            <Container>
+            <>
+                <Container>
                 <Row>
                     <Col xs={6} md={4}>
                         <p>Side Menu???</p>
@@ -28,7 +29,6 @@ class MyComponent extends React.Component {
                                 bowl, make sure to steal water from the toilet give attitude, for push your water 
                                 glass on the floor, and cat ass trophy headbutt owner's knee.
                             </p>
-                            <img src="http://placekitten.com/300/300" alt="kitten"></img>
                             <p>Jumps off balcony gives owner dead mouse at present then poops in litter box snatches 
                                 yarn and fights with dog cat chases laser then plays in grass finds tiny spot in 
                                 cupboard and sleeps all day jumps in bathtub and meows when owner fills food dish 
@@ -47,6 +47,7 @@ class MyComponent extends React.Component {
                     </Col>
                 </Row>
             </Container>
+            </>
         );
     }
 

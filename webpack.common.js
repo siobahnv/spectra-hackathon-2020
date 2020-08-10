@@ -6,13 +6,11 @@ const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
 var dotenv = require('dotenv').config({path: __dirname + '/.env'});
 
-
-
 module.exports = {
   context: path.join(__dirname, './'),
-  entry: './src/index.js',
+  entry: ['babel-polyfill', './src/index.js'],
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: [".wasm", ".ts", ".tsx", ".mjs", ".cjs", ".js", ".json"],
   },
   module: {
     rules: [

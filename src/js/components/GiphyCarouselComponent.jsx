@@ -9,7 +9,7 @@ const giphyFetch = new GiphyFetch(process.env.REACT_APP_GIPHY_API_KEY);
 const fetchGifs = (offset) =>
     giphyFetch.search("space cats", { offset, limit: 10 });
 
-function GiphyComponent() {
+function GiphyCarouselComponent() {
     return (
         <>
             <Carousel fetchGifs={fetchGifs} gifHeight={200} gutter={6} />
@@ -18,4 +18,4 @@ function GiphyComponent() {
     );
 }
 
-export { GiphyComponent }
+export { GiphyCarouselComponent }
